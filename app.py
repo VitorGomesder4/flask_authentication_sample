@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from models.user import User
 from database import db
 
 app = Flask(__name__) #instanciando flask
