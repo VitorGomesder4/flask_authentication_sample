@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify, render_template
+from database import db
 
 app = Flask(__name__) #instanciando flask
 app.config['SECRET_KEY'] = "your_secret_key"
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 
+db.init_app(app) #Iniciando db com aplicação flask
 #Session <- conexão ativa
 
 @app.route("/Ola", methods=['GET'])
