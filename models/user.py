@@ -1,4 +1,4 @@
-from app import db
+from database import db
 from flask_login import UserMixin #biblioteca para autenticar usuario no contexto do flask
 
 class User(db.Model, UserMixin):
