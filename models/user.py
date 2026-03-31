@@ -1,6 +1,7 @@
 from app import db
+from flask_login import UserMixin #biblioteca para autenticar usuario no contexto do flask
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     # id (int), username (text), password (text)
     id = db.Column(db.Integer, primay_key=True)
     username = db.Column(db.String(80), nullable=False, unique=True)
