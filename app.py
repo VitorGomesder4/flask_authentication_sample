@@ -12,6 +12,18 @@ db.init_app(app) #Iniciando db com aplicação flask
 
 login_manager.init_app(app)
 
+@app.route("/login", methods=['POST'])
+def login():
+    data = request.json
+    username = data.get("username")
+    password = data.get("password")
+
+    if username and password:
+        pass
+    
+    
+    return jsonify({"message": "credenciais invalidas"}), 400
+
 @app.route("/Ola", methods=['GET'])
 def ola():
     return "Ola"
